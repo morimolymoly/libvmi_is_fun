@@ -1,0 +1,16 @@
+version: '2'
+services:
+  data:
+    container_name: data_c
+    image: busybox
+    volumes:
+      - ./src:/app
+  libvmi: # docker-compose run libvmi /bin/bash
+    container_name: libvmi_c
+    build: ./containers/libvmi
+    volumes_from:
+      - data
+    working_dir: /app
+    tty: true
+
+

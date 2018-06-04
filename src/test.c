@@ -34,14 +34,6 @@
 int main (int argc, char **argv)
 {
     vmi_instance_t vmi;
-    struct sigaction act;
-    act.sa_handler = close_handler;
-    act.sa_flags = 0;
-    sigemptyset(&act.sa_mask);
-    sigaction(SIGHUP,  &act, NULL);
-    sigaction(SIGTERM, &act, NULL);
-    sigaction(SIGINT,  &act, NULL);
-    sigaction(SIGALRM, &act, NULL);
 
     char *name = NULL;
 
